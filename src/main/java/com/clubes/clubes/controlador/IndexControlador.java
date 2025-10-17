@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexControlador {
 
     @GetMapping("/")
+    public String redirectToLogin() {
+        return "redirect:/usuarios/login";
+    }
+
+    @GetMapping("/inicio")
     public String index() {
         return "index";
     }

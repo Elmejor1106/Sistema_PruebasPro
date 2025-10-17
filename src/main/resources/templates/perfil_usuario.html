@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Perfil de Usuario</h3>
+                    </div>
+                    <div class="card-body">
+                        <div th:if="${usuario != null}">
+                            <h4>Datos Personales</h4>
+                            <p><strong>Nombre:</strong> <span th:text="${usuario.primerNombre} + ' ' + ${usuario.segundoNombre}"></span></p>
+                            <p><strong>Apellidos:</strong> <span th:text="${usuario.primerApellido} + ' ' + ${usuario.segundoApellido}"></span></p>
+                            <p><strong>Correo:</strong> <span th:text="${usuario.correo}"></span></p>
+                            <p><strong>Número de Documento:</strong> <span th:text="${usuario.numeroDocumento}"></span></p>
+                            <p><strong>Rol:</strong> <span th:text="${usuario.rol}"></span></p>
+                        </div>
+
+                        <hr>
+
+                        <h4>Mis Puntajes</h4>
+                        <div th:if="${pruebas != null and not pruebas.isEmpty()}">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Número de Registro</th>
+                                        <th>Puntaje Global</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="prueba : ${pruebas}">
+                                        <td th:text="${prueba.numeroRegistro}"></td>
+                                        <td th:text="${prueba.puntajeGlobal}"></td>
+                                        <td>
+                                            <a th:href="@{'/pruebas/detalle/' + ${prueba.id}}" class="btn btn-info btn-sm">Ver Detalles</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div th:if="${pruebas == null or pruebas.isEmpty()}" class="alert alert-info">
+                            Aún no tienes puntajes registrados.
+                        </div>
+
+                        <div th:if="${usuario == null}" class="alert alert-warning">
+                            No se pudo cargar la información del usuario.
+                        </div>
+                        <div class="mt-3 text-center">
+                            <a th:href="@{/logout}" class="btn btn-danger">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
