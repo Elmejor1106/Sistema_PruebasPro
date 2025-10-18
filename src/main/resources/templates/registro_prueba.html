@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Registro de Puntaje Pruebas TyT</title>
@@ -41,25 +42,29 @@
             color: #002b5c;
         }
 
-        .form-control, .form-select {
+        .form-control,
+        .form-select {
             border-radius: 0.5rem;
             border: 1px solid #ccc;
             padding: 0.6rem;
         }
 
-        .form-control:focus, .form-select:focus {
+        .form-control:focus,
+        .form-select:focus {
             border-color: #004080;
             box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
         }
 
-        .btn-primary, .btn-success {
+        .btn-primary,
+        .btn-success {
             background-color: #004080;
             border: none;
             border-radius: 0.5rem;
             transition: all 0.3s ease;
         }
 
-        .btn-primary:hover, .btn-success:hover {
+        .btn-primary:hover,
+        .btn-success:hover {
             background-color: #0059b3;
             transform: translateY(-2px);
         }
@@ -83,11 +88,13 @@
             margin-bottom: 3rem;
         }
 
-        .text-center button, .text-center a {
+        .text-center button,
+        .text-center a {
             margin-top: 1rem;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="row justify-content-center">
@@ -112,10 +119,12 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="numeroDocumento" class="form-label">Número de Documento</label>
-                                    <input type="text" class="form-control" id="numeroDocumento" name="numeroDocumento" required>
+                                    <input type="text" class="form-control" id="numeroDocumento" name="numeroDocumento"
+                                        required>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="contrasena" class="form-label">Contraseña (para nuevos estudiantes)</label>
+                                    <label for="contrasena" class="form-label">Contraseña (para nuevos
+                                        estudiantes)</label>
                                     <input type="password" class="form-control" id="contrasena" name="contrasena">
                                 </div>
                             </div>
@@ -123,14 +132,16 @@
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <label for="numeroRegistro" class="form-label">Número de Registro</label>
-                                    <input type="text" class="form-control" id="numeroRegistro" name="numeroRegistro" required>
+                                    <input type="text" class="form-control" id="numeroRegistro" name="numeroRegistro"
+                                        required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="primerApellido" class="form-label">Primer Apellido</label>
-                                    <input type="text" class="form-control" id="primerApellido" name="primerApellido" required>
+                                    <input type="text" class="form-control" id="primerApellido" name="primerApellido"
+                                        required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="segundoApellido" class="form-label">Segundo Apellido</label>
@@ -141,7 +152,8 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="primerNombre" class="form-label">Primer Nombre</label>
-                                    <input type="text" class="form-control" id="primerNombre" name="primerNombre" required>
+                                    <input type="text" class="form-control" id="primerNombre" name="primerNombre"
+                                        required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="segundoNombre" class="form-label">Segundo Nombre</label>
@@ -166,23 +178,81 @@
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <label for="puntajeGlobal" class="form-label">Puntaje Global (0-300)</label>
-                                    <input type="number" class="form-control" id="puntajeGlobal" name="puntajeGlobal" min="0" max="300" required>
+                                    <input type="number" class="form-control" id="puntajeGlobal" name="puntajeGlobal"
+                                        min="0" max="300" required>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="comunicacionEscrita" class="form-label">Comunicación Escrita</label>
-                                    <input type="number" class="form-control" id="comunicacionEscrita" name="comunicacionEscrita" min="0" max="300">
+                                    <input type="number" class="form-control" id="comunicacionEscrita"
+                                        name="comunicacionEscrita" min="0" max="300">
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="comunicacionEscritaNivel" class="form-label">Nivel Comunicación Escrita</label>
-                                    <input type="text" class="form-control" id="comunicacionEscritaNivel" name="comunicacionEscritaNivel">
+                                    <label for="comunicacionEscritaNivel" class="form-label">Nivel Comunicación
+                                        Escrita</label>
+                                    <input type="text" class="form-control" id="comunicacionEscritaNivel"
+                                        name="comunicacionEscritaNivel">
                                 </div>
                             </div>
 
                             <!-- Sección final -->
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary px-4">Registrar Puntaje</button>
-                                <a href="/inicio" class="btn btn-secondary ms-2 px-4">Volver al Menú Principal</a>
+                           
+                            <div class="row">
+                                <div class="col-md-4 mb-3"> <label for="razonamientoCuantitativo"
+                                        class="form-label">Razonamiento Cuantitativo</label> <input type="number"
+                                        class="form-control" id="razonamientoCuantitativo"
+                                        name="razonamientoCuantitativo" min="0" max="300"> </div>
+                                <div class="col-md-4 mb-3"> <label for="razonamientoCuantitativoNivel"
+                                        class="form-label">Nivel Razonamiento Cuantitativo</label> <input type="text"
+                                        class="form-control" id="razonamientoCuantitativoNivel"
+                                        name="razonamientoCuantitativoNivel"> </div>
+                                <div class="col-md-4 mb-3"> <label for="lecturaCritica" class="form-label">Lectura
+                                        Crítica</label> <input type="number" class="form-control" id="lecturaCritica"
+                                        name="lecturaCritica" min="0" max="300"> </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3"> <label for="lecturaCriticaNivel" class="form-label">Nivel
+                                        Lectura Crítica</label> <input type="text" class="form-control"
+                                        id="lecturaCriticaNivel" name="lecturaCriticaNivel"> </div>
+                                <div class="col-md-4 mb-3"> <label for="competenciasCiudadanas"
+                                        class="form-label">Competencias Ciudadanas</label> <input type="number"
+                                        class="form-control" id="competenciasCiudadanas" name="competenciasCiudadanas"
+                                        min="0" max="300"> </div>
+                                <div class="col-md-4 mb-3"> <label for="competenciasCiudadanasNivel"
+                                        class="form-label">Nivel Competencias Ciudadanas</label> <input type="text"
+                                        class="form-control" id="competenciasCiudadanasNivel"
+                                        name="competenciasCiudadanasNivel"> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3"> <label for="ingles" class="form-label">Inglés</label> <input
+                                        type="number" class="form-control" id="ingles" name="ingles" min="0" max="300">
+                                </div>
+                                <div class="col-md-4 mb-3"> <label for="formulacionProyectosIngenieria"
+                                        class="form-label">Formulación De Proyectos De Ingeniería</label> <input
+                                        type="number" class="form-control" id="formulacionProyectosIngenieria"
+                                        name="formulacionProyectosIngenieria" min="0" max="300"> </div>
+                                <div class="col-md-4 mb-3"> <label for="formulacionProyectosIngenieriaNivel"
+                                        class="form-label">Nivel Formulación De Proyectos De Ingeniería</label> <input
+                                        type="text" class="form-control" id="formulacionProyectosIngenieriaNivel"
+                                        name="formulacionProyectosIngenieriaNivel"> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3"> <label for="pensamientoCientificoMatematicasEstadistica"
+                                        class="form-label">Pensamiento Científico - Matemáticas Y Estadística</label>
+                                    <input type="number" class="form-control"
+                                        id="pensamientoCientificoMatematicasEstadistica"
+                                        name="pensamientoCientificoMatematicasEstadistica" min="0" max="300"> </div>
+                                <div class="col-md-4 mb-3"> <label
+                                        for="pensamientoCientificoMatematicasEstadisticaNivel" class="form-label">Nivel
+                                        Pensamiento Científico - Matemáticas Y Estadística</label> <input type="text"
+                                        class="form-control" id="pensamientoCientificoMatematicasEstadisticaNivel"
+                                        name="pensamientoCientificoMatematicasEstadisticaNivel"> </div>
+                                <div class="col-md-4 mb-3"> <label for="disenoSoftware" class="form-label">Diseño De
+                                        Software</label> <input type="number" class="form-control" id="disenoSoftware"
+                                        name="disenoSoftware" min="0" max="300"> </div>
+                            </div> <button type="submit" class="btn btn-success w-100">Registrar Puntaje</button>
+                            <div class="text-center"> <button type="submit" class="btn btn-success">Registrar
+                                    Puntaje</button> <a href="/inicio" class="btn btn-secondary ms-2">Volver al Menú
+                                    Principal</a> </div>
                         </form>
                     </div>
                 </div>
@@ -190,4 +260,5 @@
         </div>
     </div>
 </body>
+
 </html>

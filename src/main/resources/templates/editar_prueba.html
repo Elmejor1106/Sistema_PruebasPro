@@ -186,8 +186,80 @@
                             <!-- Puntajes -->
                             <h5 class="text-primary fw-bold mb-3"><i class="fas fa-chart-line me-2"></i>Resultados de la Prueba</h5>
 
-                            <!-- Aquí se mantienen los inputs del puntaje igual que en tu código original -->
-                            <!-- (Para no recargar el ejemplo visualmente, no los repito, pero se conservan todos los campos tal cual) -->
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="puntajeGlobal" class="form-label">Puntaje Global</label>
+                                    <input type="number" class="form-control" id="puntajeGlobal" name="puntajeGlobal" th:value="${prueba.puntajeGlobal}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="comunicacionEscrita" class="form-label">Comunicación Escrita</label>
+                                    <input type="number" class="form-control" id="comunicacionEscrita" name="comunicacionEscrita" th:value="${prueba.comunicacionEscrita}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="comunicacionEscritaNivel" class="form-label">Nivel Comunicación Escrita</label>
+                                    <input type="text" class="form-control" id="comunicacionEscritaNivel" name="comunicacionEscritaNivel" th:value="${prueba.comunicacionEscritaNivel}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="razonamientoCuantitativo" class="form-label">Razonamiento Cuantitativo</label>
+                                    <input type="number" class="form-control" id="razonamientoCuantitativo" name="razonamientoCuantitativo" th:value="${prueba.razonamientoCuantitativo}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="razonamientoCuantitativoNivel" class="form-label">Nivel Razonamiento Cuantitativo</label>
+                                    <input type="text" class="form-control" id="razonamientoCuantitativoNivel" name="razonamientoCuantitativoNivel" th:value="${prueba.razonamientoCuantitativoNivel}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="lecturaCritica" class="form-label">Lectura Crítica</label>
+                                    <input type="number" class="form-control" id="lecturaCritica" name="lecturaCritica" th:value="${prueba.lecturaCritica}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="lecturaCriticaNivel" class="form-label">Nivel Lectura Crítica</label>
+                                    <input type="text" class="form-control" id="lecturaCriticaNivel" name="lecturaCriticaNivel" th:value="${prueba.lecturaCriticaNivel}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="competenciasCiudadanas" class="form-label">Competencias Ciudadanas</label>
+                                    <input type="number" class="form-control" id="competenciasCiudadanas" name="competenciasCiudadanas" th:value="${prueba.competenciasCiudadanas}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="competenciasCiudadanasNivel" class="form-label">Nivel Competencias Ciudadanas</label>
+                                    <input type="text" class="form-control" id="competenciasCiudadanasNivel" name="competenciasCiudadanasNivel" th:value="${prueba.competenciasCiudadanasNivel}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="ingles" class="form-label">Inglés</label>
+                                    <input type="number" class="form-control" id="ingles" name="ingles" th:value="${prueba.ingles}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="formulacionProyectosIngenieria" class="form-label">Formulación de Proyectos de Ingeniería</label>
+                                    <input type="number" class="form-control" id="formulacionProyectosIngenieria" name="formulacionProyectosIngenieria" th:value="${prueba.formulacionProyectosIngenieria}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="formulacionProyectosIngenieriaNivel" class="form-label">Nivel Formulación de Proyectos</label>
+                                    <input type="text" class="form-control" id="formulacionProyectosIngenieriaNivel" name="formulacionProyectosIngenieriaNivel" th:value="${prueba.formulacionProyectosIngenieriaNivel}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="pensamientoCientificoMatematicasEstadistica" class="form-label">Pensamiento Científico, Matemáticas y Estadística</label>
+                                    <input type="number" class="form-control" id="pensamientoCientificoMatematicasEstadistica" name="pensamientoCientificoMatematicasEstadistica" th:value="${prueba.pensamientoCientificoMatematicasEstadistica}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="pensamientoCientificoMatematicasEstadisticaNivel" class="form-label">Nivel Pensamiento Científico</label>
+                                    <input type="text" class="form-control" id="pensamientoCientificoMatematicasEstadisticaNivel" name="pensamientoCientificoMatematicasEstadisticaNivel" th:value="${prueba.pensamientoCientificoMatematicasEstadisticaNivel}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="disenoSoftware" class="form-label">Diseño de Software</label>
+                                    <input type="number" class="form-control" id="disenoSoftware" name="disenoSoftware" th:value="${prueba.disenoSoftware}">
+                                </div>
+                            </div>
 
                             <div class="text-center mt-4">
                                 <button type="submit" class="btn btn-primary me-2"><i class="fas fa-save me-1"></i>Guardar Cambios</button>

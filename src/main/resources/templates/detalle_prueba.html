@@ -4,17 +4,151 @@
     <meta charset="UTF-8">
     <title>Detalle de Puntaje Prueba TyT</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --bg-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --text-dark: #1f2937;
+            --text-light: #f9fafb;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            padding: 3rem 1rem;
+            color: var(--text-dark);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border: none;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            background: var(--bg-gradient);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        table {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            vertical-align: middle;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+
+        tr:hover td {
+            background-color: #eef2ff;
+        }
+
+        .btn {
+            border-radius: 10px;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient {
+            background: var(--bg-gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: #f3f4f6;
+            color: var(--text-dark);
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e5e7eb;
+        }
+
+        .text-center.mt-4 {
+            margin-top: 2rem !important;
+        }
+
+        /* Tabla elegante */
+        .table-bordered th,
+        .table-bordered td {
+            border-color: #e5e7eb !important;
+        }
+
+        .table-bordered {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            th, td {
+                font-size: 0.85rem;
+            }
+            .card-header h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container mt-5">
+<body>
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-lg-10 col-md-11">
                 <div class="card">
-                    <div class="card-header text-center">
-                        <h3>Detalle de Puntaje Prueba TyT</h3>
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-chart-line me-2"></i>Detalle de Puntaje Prueba TyT</h3>
                     </div>
-                    <div class="card-body">
-                        <table class="table table-bordered" th:if="${usuario != null}">
+                    <div class="card-body p-4">
+                        <table class="table table-bordered text-center align-middle shadow-sm" th:if="${usuario != null}">
                             <tr><th>Tipo de Documento</th><td th:text="${usuario.tipoDocumento}"></td></tr>
                             <tr><th>Número de Documento</th><td th:text="${usuario.numeroDocumento}"></td></tr>
                             <tr><th>Primer Apellido</th><td th:text="${usuario.primerApellido}"></td></tr>
@@ -40,14 +174,16 @@
                             <tr><th>Nivel Pensamiento Científico, Matemáticas y Estadística</th><td th:text="${prueba.pensamientoCientificoMatematicasEstadisticaNivel}"></td></tr>
                             <tr><th>Diseño de Software</th><td th:text="${prueba.disenoSoftware}"></td></tr>
                         </table>
+
                         <div class="text-center mt-4">
-                            <a href="/pruebas/listar" class="btn btn-secondary">Volver al Listado</a>
-                            <a href="/inicio" class="btn btn-secondary ms-2">Volver al Menú Principal</a>
+                            <a href="/pruebas/listar" class="btn btn-gradient me-2"><i class="fa-solid fa-list"></i> Volver al Listado</a>
+                            <a href="/inicio" class="btn btn-secondary"><i class="fa-solid fa-house"></i> Menú Principal</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
